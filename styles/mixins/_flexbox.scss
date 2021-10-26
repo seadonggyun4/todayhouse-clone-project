@@ -12,6 +12,7 @@ $flex-map: (
 );
 
 // @function를 통해 함수 생성
+// 함수 인 만큼 return 즉 반환값을 만들수 있다.
 @function _get_flex_value($key) {
   //map-get은 sass에서 제공하는 내장함수
   //map-get을 통해 map을 받아올수 있다.
