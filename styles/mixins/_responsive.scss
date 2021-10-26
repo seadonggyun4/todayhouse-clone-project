@@ -1,3 +1,6 @@
+//[responsive 리팩토링]
+//constant의 breakpoint.scss
+//layout의 gride.scss
 @mixin responsive($screen) {
   @if ($screen == 'T') {
     @media screen and (min-width: $md-breakpoint) {
