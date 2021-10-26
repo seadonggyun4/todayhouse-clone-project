@@ -1,0 +1,28 @@
+//[avatar 모듈]
+
+%avatar-base {
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    //objcet-fit: 기존의 background-image 에서만 가능하던 속성을 img 태그에서도 가능하게 한다.
+    //시맨틱한 웹을 포기하면서까지 background-image로 이미지를 넣을 이유가 사라졌다!
+    object-fit: cover;
+  }
+}
+
+.avatar-24 {
+  @extend %avatar-base;
+  width: 24px;
+  height: 24px;
+}
+
+.avatar-32 {
+  @extend %avatar-base;
+  width: 32px;
+  height: 32px;
+}
