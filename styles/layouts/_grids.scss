@@ -30,6 +30,8 @@
 container-size는 그리드시스템이 적용되는 범위
 */
 
+@use "sass:math";
+
 $gutter: 20px;
 
 $sm-columns: 4;
@@ -63,7 +65,7 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
   // .col-sm-1  .col-md-2  .col-lg-3
   // 모바일에서 각 columns의 gutter를 적용시키기 위함
   [class^='col-'] {
-    padding: 0 $gutter / 2;
+    padding: 0 $gutter * 0.5;
   }
 
   // sass for 반복문
@@ -72,7 +74,7 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
     // columns 의 갯수에 따른 넓이 조정
     .col-sm-#{$i} {
       //percemtage는 값을 %로 바꾼다.
-      width: percentage($i / $sm-columns);
+      width: percentage(math.div($i, $sm-columns));
     }
   }
   /*[ =========== TABLET ========== ]*/
@@ -82,7 +84,7 @@ $lg-max-container: ($lg-unit + $gutter) * $lg-columns;
 
     @for $i from 1 through $md-columns {
       .col-md-#{$i} {
-        width: percentage($i / $md-columns);
+        width: percentage(math.div($i, $md-columns));
       }
     }
   }
