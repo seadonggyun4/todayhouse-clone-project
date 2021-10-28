@@ -1,4 +1,5 @@
 //[gnb의 icon button]
+@use 'sass:math';
 
 .gnb-icon-button {
   $badge-size: 16px;
@@ -46,7 +47,7 @@
     color: $white;
     text-align: center;
     background-color: $red;
-    border-radius: $badge-size/2;
+    border-radius: math.div($badge-size, 2);
   }
 
   @include responsive(T) {
