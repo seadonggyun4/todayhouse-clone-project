@@ -1,12 +1,22 @@
 //[gnb의 nav]
 
 .gnb-nav {
+  $padding: 8px;
+
   &-list {
     @include flexbox(start);
   }
 
   &-item {
-    margin-right: 24px;
+    // a태그의 영역에 padding 8px을 주면서 전체적인 디자인에 16px이 늘어나게 됬다.
+    margin-right: 24px - ($padding * 2);
+
+    &.is-active,
+    &:hover {
+      a {
+        color: $blue;
+      }
+    }
 
     &:last-child {
       margin-right: 0;
@@ -14,6 +24,8 @@
 
     a {
       @include text-style(18, $primary);
+      display: block;
+      padding: $padding;
       font-weight: 700;
     }
   }
