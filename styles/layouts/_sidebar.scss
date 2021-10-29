@@ -1,7 +1,17 @@
+//sass-lint:disable-all
+
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $sidebar-level;
   width: 240px;
+  height: 100vh;
   padding: 32px 20px;
+  //스크롤 가능하게 하기 위함
+  overflow-y: auto;
   background-color: $white;
+  overscroll-behavior: contain;
 
   &-header {
     padding: 0 12px;
@@ -89,5 +99,11 @@
         }
       }
     }
+  }
+
+  //스크롤바 모양 제거
+  //웹표준에 준수하는 내용은 아니지만 디자인을 의도와 맞게 하기위해 사용
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
