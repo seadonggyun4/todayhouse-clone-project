@@ -1,0 +1,65 @@
+.sidebar {
+  width: 240px;
+  padding: 32px 20px;
+  background-color: $white;
+
+  &-header {
+    padding: 0 12px;
+
+    .logo {
+      @include flexbox(start);
+
+      a {
+        display: block;
+      }
+
+      img {
+        display: block;
+        width: auto;
+        height: 20px;
+      }
+    }
+  }
+
+  // 이 두개의 요소를 가운데 정렬하기 위함
+  &-user,
+  &-auth {
+    @include flexbox(start);
+    height: 88px;
+  }
+
+  &-user {
+    // padding: 32px 0;
+
+    a {
+      @include flexbox(start);
+      @include text-style(14, $primary);
+      width: 100%;
+      font-weight: 500;
+    }
+
+    .avatar-24 {
+      //flexbox 정렬을 위해 사이즈를 줄이지 않겠다
+      flex-grow: 0;
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+
+    .username {
+      //flexbox 정렬을 위해 남는공간을 다 차지하겠다.
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  &-auth {
+    @include flexbox(between);
+    // padding: 24px 0;
+
+    a {
+      width: 84px;
+    }
+  }
+}
