@@ -1,19 +1,26 @@
 //sass-lint:disable-all
 
+@use 'sass:math';
+
+$lnb-link-padding: 8px;
+$grid-margin: $sm-margin + math.div($gutter, 2);
+
 .lnb {
   overflow-x: auto;
-  border-bottom: 1px solid $border;
 
   &-list {
     @include inline-flexbox(start);
-    position: relative;
-    left: -8px;
+    height: 40px;
+    //margin으로 늘어난 길이도 결국은 box-size 이기때문에 border가 유지된다.
+    margin-left: -#{$grid-margin};
+    padding: 0 #{$grid-margin - $lnb-link-padding};
     // text, inline 성질을 가진 요소들에게 무조건 한줄을 유지하라는 명령어
     white-space: nowrap;
     // 기존의 width의 px, %단위는 자신을 감싸고 있는 부모요소의 길이를 기준으로 계산되었다.
     //max-content는 자식요소를 기준으로 자신의 자식요소들이 가장 길때의 자신의 길이를 가정한다.
     // 하지만 max-content는 호환성에 심각한 이슈를 가지고 있다.
     // width: max-content;
+    border-bottom: 1px solid $border;
   }
 
   &-item {
@@ -23,18 +30,15 @@
       @include inline-flexbox;
       @include text-style(13, $dark);
       height: 40px;
-      padding: 0 8px;
+      padding: 0 $lnb-link-padding;
       font-weight: 700;
-    }
-
-    .ic-new {
-      color: $red;
+      border-bottom: 2px solid transparent;
     }
 
     &.is-active {
       a {
         color: $blue;
-        border-bottom: 2px solid $blue;
+        border-bottom-color: $blue;
       }
     }
   }
