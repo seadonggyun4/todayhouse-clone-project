@@ -1,0 +1,45 @@
+//sass-lint:disable-all
+
+.lnb {
+  overflow-x: auto;
+  border-bottom: 1px solid $border;
+
+  &-list {
+    @include inline-flexbox(start);
+    position: relative;
+    left: -8px;
+    // text, inline 성질을 가진 요소들에게 무조건 한줄을 유지하라는 명령어
+    white-space: nowrap;
+    // 기존의 width의 px, %단위는 자신을 감싸고 있는 부모요소의 길이를 기준으로 계산되었다.
+    //max-content는 자식요소를 기준으로 자신의 자식요소들이 가장 길때의 자신의 길이를 가정한다.
+    // 하지만 max-content는 호환성에 심각한 이슈를 가지고 있다.
+    // width: max-content;
+  }
+
+  &-item {
+    // flex-shrink: 0;
+
+    a {
+      @include inline-flexbox;
+      @include text-style(13, $dark);
+      height: 40px;
+      padding: 0 8px;
+      font-weight: 700;
+    }
+
+    .ic-new {
+      color: $red;
+    }
+
+    &.is-active {
+      a {
+        color: $blue;
+        border-bottom: 2px solid $blue;
+      }
+    }
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
