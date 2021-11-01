@@ -2,10 +2,11 @@
 
 @use 'sass:math';
 
-$lnb-link-padding: 8px;
-$grid-margin: $sm-margin + math.div($gutter, 2);
-
 .lnb {
+  $lnb-link-padding: 8px;
+  $grid-margin: $sm-margin + math.div($gutter, 2);
+  @include no-scrollbar;
+
   overflow-x: auto;
 
   &-list {
@@ -41,9 +42,5 @@ $grid-margin: $sm-margin + math.div($gutter, 2);
         border-bottom-color: $blue;
       }
     }
-  }
-
-  &::-webkit-scrollbar {
-    display: none;
   }
 }

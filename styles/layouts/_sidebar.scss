@@ -110,7 +110,5 @@
 
   //스크롤바 모양 제거
   //웹표준에 준수하는 내용은 아니지만 디자인을 의도와 맞게 하기위해 사용
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  @include no-scrollbar;
 }
