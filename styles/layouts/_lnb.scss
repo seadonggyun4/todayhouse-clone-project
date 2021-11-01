@@ -3,6 +3,8 @@
 @use 'sass:math';
 
 .lnb {
+  $lnb-height-sm: 40px;
+  $lnb-height-md: 50px;
   $lnb-link-padding: 8px;
   $grid-margin: $sm-margin + math.div($gutter, 2);
   @include no-scrollbar;
@@ -11,7 +13,7 @@
 
   &-list {
     @include inline-flexbox(start);
-    height: 40px;
+    height: $lnb-height-sm;
     //margin으로 늘어난 길이도 결국은 box-size 이기때문에 border가 유지된다.
     margin-left: -#{$grid-margin};
     padding: 0 #{$grid-margin - $lnb-link-padding};
@@ -30,16 +32,40 @@
     a {
       @include inline-flexbox;
       @include text-style(13, $dark);
-      height: 40px;
+      height: $lnb-height-sm;
       padding: 0 $lnb-link-padding;
       font-weight: 700;
       border-bottom: 2px solid transparent;
+
+      &:hover {
+        color: $blue;
+      }
     }
 
     &.is-active {
       a {
         color: $blue;
         border-bottom-color: $blue;
+      }
+    }
+  }
+
+  @include responsive(T) {
+    height: $lnb-height-md;
+    overflow-x: visible;
+    border-bottom: 1px solid $border;
+
+    &-list {
+      height: auto;
+      padding: 0;
+      margin-left: 0;
+      border-bottom: none;
+    }
+
+    &-item {
+      a {
+        @include text-style(14);
+        height: $lnb-height-md;
       }
     }
   }
