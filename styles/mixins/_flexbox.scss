@@ -27,12 +27,14 @@ $flex-map: (
   align-items: _get_flex_value($ai);
   justify-content: _get_flex_value($jc);
 }
+
 //[inline- flexbox]
 @mixin inline-flexbox($jc: center, $ai: center) {
   display: inline-flex;
   align-items: _get_flex_value($ai);
   justify-content: _get_flex_value($jc);
 }
+
 //[column- flexbox]
 @mixin column-flexbox($jc: center, $ai: center) {
   display: flex;
