@@ -9,6 +9,7 @@ const productCarousel = tns({
   autoplayButtonOutput: false,
   mouseDrag: true,
   preventScrollOnTouch: true,
+  autoplayTimeout: 10000,
   //   items: 3,
   //   slideBy: 'page',
 })
