@@ -3,6 +3,7 @@
   $table-th-width-sm: 100px;
   $table-th-width-md: 140px + $table-cell-padding;
 
+  width: 100%;
   border-collapse: collapse; //테이블 사용시 반드시 선언, border가 서로 떨어져있는지 합쳐져 있는지
   table-layout: fixed; //테이블 사용시 반드시 선언, 테이블레이아웃 고정여부
 
