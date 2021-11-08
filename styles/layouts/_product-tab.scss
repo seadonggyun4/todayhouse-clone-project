@@ -1,8 +1,6 @@
 @use 'sass:math';
 
 .product-tab {
-  $grid-margin: $sm-margin + math.div($gutter, 2);
-
   position: sticky;
   top: $gnb-height-sm + $lnb-height-sm - 1px;
   z-index: $product-tab-level;

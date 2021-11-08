@@ -28,16 +28,16 @@
 
   .text-button {
     @include text-style(14, $blue);
-    right: -15px;
-    padding: 15px;
+    right: -#{$grid-margin};
+    padding: $grid-margin;
     font-weight: 700;
   }
 
   .icon-button {
     @include flexbox;
-    right: -15px;
-    width: 22px + (15px * 2);
-    height: 22px + (15px * 2);
+    right: -#{$grid-margin};
+    width: 22px + ($grid-margin * 2);
+    height: 22px + ($grid-margin * 2);
     font-size: 22px;
     color: $secondary;
 

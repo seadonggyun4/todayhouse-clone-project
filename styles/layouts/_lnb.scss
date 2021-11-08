@@ -4,7 +4,6 @@
 
 .lnb {
   $lnb-link-padding: 8px;
-  $grid-margin: $sm-margin + math.div($gutter, 2);
   @include no-scrollbar;
 
   overflow-x: auto;
