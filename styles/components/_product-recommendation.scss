@@ -1,6 +1,6 @@
 .product-recommendation {
   .product-list {
-    @include flexbox(between);
+    @include flexbox(between, start);
     flex-wrap: wrap;
   }
 
