@@ -73,11 +73,9 @@
     }
 
     .username {
+      @include truncate;
       //flexbox 정렬을 위해 남는공간을 다 차지하겠다.
       flex-grow: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
     }
   }
 
