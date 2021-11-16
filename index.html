@@ -250,6 +250,7 @@
 
     <!-- ===================== main ===================== -->
     <main class="product-show">
+      <!-- ==== 캐러셀 & 상품주문 ==== -->
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
@@ -598,6 +599,7 @@
         </div>
       </div>
 
+      <!-- ==== 탭 패널 ==== -->
       <div class="product-tab">
         <div class="container">
           <div class="row">
@@ -654,6 +656,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4 col-lg-8">
+            <!-- 0. 사용자 갤러리 색션 -->
             <section class="product-section product-user-gallery">
               <header class="product-section-header">
                 <h1 class="title">유저들의 스타일링샷</h1>
@@ -665,6 +668,7 @@
 
               <div class="product-section-content">
                 <div class="user-gallery" role="region">
+                  <!-- 슬라이더 -->
                   <div class="user-gallery-slider">
                     <ol class="slider-list">
                       <li class="slider-item">
@@ -791,7 +795,16 @@
                       </li>
                     </ol>
                   </div>
-                  <div class="user-gallery-thumbnail"></div>
+                  <!-- 버튼thumbnail -->
+                  <div class="user-gallery-thumbnail">
+                    <ol class="thumbnail-list" role="tablist"> 
+                      <li class="thumbnail-item" role="tab" id="user-gallery-tab-1">
+                        <button type="button"> 
+                          <img src="/assets/images/img-review-01.jpg" alt="유저리뷰 1번">
+                        </button>
+                      </li>
+                    </ol>
+                  </div>
                 </div>
               </div>
             </section>
