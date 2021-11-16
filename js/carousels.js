@@ -16,9 +16,9 @@ const productCarousel = tns({
 
 const userGallery = tns({
   container: '.user-gallery .slider-list',
-  controls: false,
-  gutter: 4, // 이미지의 간격
-  edgePadding: 16, // 사진 양 옆에 padding 값 부여
+  controls:false,
+  gutter: 4, // 캐러셀 이미지와 이미지 간의 간격
+  edgePadding: 16, // 사진 양 옆에 padding 값 부여(캐러셀의 영역이 줄어든다)
   loop: false, //캐러셀 루프 설정
   arrowKeys: true, //화살표로 움직이기
   mouseDrag: true, //마우스 드래그로 움직일수 있는가.
