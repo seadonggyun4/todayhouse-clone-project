@@ -14,23 +14,27 @@ const productCarousel = tns({
   //   slideBy: 'page',
 })
 
-const userGallery = tns({
-  container: '.user-gallery .slider-list',
+const userGalleryMobile = tns({
+  container: '.user-gallery.is-mobile .slider-list',
   controls:false,
-  controlsContainer: '.user-gallery-controls',
-  navContainer: '.user-gallery .thumbnail-list', // 케러셀 요소를 컨트롤할 요소들
+  navContainer: '.user-gallery.is-mobile .thumbnail-list', // 케러셀 요소를 컨트롤할 요소들
   gutter: 4, // 캐러셀 이미지와 이미지 간의 간격
   edgePadding: 16, // 사진 양 옆에 padding 값 부여(캐러셀의 영역이 줄어든다)
   loop: false, //캐러셀 루프 설정
   arrowKeys: true, //화살표로 움직이기
   mouseDrag: true, //마우스 드래그로 움직일수 있는가.
   preventScrollOnTouch: true, //마우스 드래그 콘솔에 오류뜨는거 막기
-  responsive: {
-    // 캐러셀을 반응형으로 디자인 할수있다.
-    768: {
-      gutter: 6,
-      controls: true,
-      edgePadding: 75,
-    },
-  },
+})
+
+const userGalleryDesktop = tns({
+  container: '.user-gallery.is-desktop .slider-list',
+  controls: true,
+  controlsContainer: '.user-gallery.is-desktop .user-gallery-controls',
+  navContainer: '.user-gallery.is-desktop .thumbnail-list', // 케러셀 요소를 컨트롤할 요소들
+  gutter: 6, // 캐러셀 이미지와 이미지 간의 간격
+  edgePadding: 75, // 사진 양 옆에 padding 값 부여(캐러셀의 영역이 줄어든다)
+  loop: false, //캐러셀 루프 설정
+  arrowKeys: true, //화살표로 움직이기
+  mouseDrag: true, //마우스 드래그로 움직일수 있는가.
+  preventScrollOnTouch: true, //마우스 드래그 콘솔에 오류뜨는거 막기
 })
