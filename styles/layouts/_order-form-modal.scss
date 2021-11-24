@@ -5,10 +5,13 @@
     bottom: 0;
     left: 0;
     padding-top: 16px;
+    max-height: 70vh;
     width: 100%;
     background-color: $white;
     border-top-left-radius: 12px ;
     border-top-right-radius: 12px ;
+    overflow-y: auto;
+    overscroll-behavior: contain;
     
 
     &.is-open{
@@ -21,14 +24,22 @@
         margin-bottom: 9px;
     }
 
-    .order-checkouts,
-    .order-summary{
+    .order-checkouts{
         margin-bottom: 16px;
     }
 
+    .order-summary{
+        // position 이 fixed로 되어있는 button-group에 가리기 때문
+        margin-bottom: 48px + (4px * 2) + 16px; 
+    }
+
     .button-group{
+        position: fixed;
+        bottom: 0;
+        left: 0;
         padding: 4px;
-        padding-top: 0;
+        width: 100%;
+        background-color: $white;
     }
 
 
