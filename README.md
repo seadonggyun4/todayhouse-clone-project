@@ -4,71 +4,66 @@
 <br>
 <br>
 
-# 😏 내일의 집이란?
-  자취생 들의 필수어플 "오늘의 집" 의 상품판매 페이지의 UI 를 componet 단위부터 자세하게 분석한뒤 똑같이 만들어 보았습니다.
-<br>
-<br>
-<br>
+# ✅ 내일의 집이란?
+  자취생 들의 필수어플 "오늘의 집" 의 상품판매 페이지의 UI 를 SCSS 를 활용해
 
-# 구현방법
-# 🔨 1. Assets 파일 준비
-  ### Image 
-  - 웹페이지에서 이미지의 용량은 약 60%를 차지할 정도로 코드파일보다 크고 많은 영향을 끼친다. 랜더링 타임을 줄이고 사용성 증진을 위해, 목적에 맞는 이미지 확장자(jpg, png, svg, webp)를 선택.
-  
-  ### Icon
-  - svg 파일을 icon으로 변환
-  - svg는 html에 넣어 조작할수 있다는 장점이 있지만 코드가 길고 복잡하다
-  - svg 파일 icon으로 변환 사이트 : (https://icomoon.io/app/#/select) 
-
-  ### favicon
-  - favicon 설정 사이트 : (https://realfavicongenerator.net/) 
-
-  ### Css reset
-  - css reset 방법에는 대표적으로 Reset.css / Normalize.css 가 있다.
-  - Reset.css 는 기본 css 를 전부 초기화 하고 백지상태로 만든다.
-  - Normalize.css 브라우저 파편화, 크로스 브라우징을 위해 만들어진 css
-  - 목적에 맞게 미리 Css reset을 세팅한다.
+크게는Layout 단위부터 componet 단위까지 자세하게 분석한뒤 똑같이 만들어 볼수 있다.
 <br>
-<br>
-<br>
-<br>
-
-# 🔨 2. SCSS : 변수, Mixin , 모듈 리팩토링
-  ## 변수 
-  ![constants](https://user-images.githubusercontent.com/84368302/143585814-74c6bc05-3a7d-4f7b-80cc-d4b080f9f832.PNG)
-   - 자주 사용되는 CSS 스타일 코드를 따로 변수명을 지정해 관리하면 유지보수 가 용이해 진다.
-  - 컬러, 타이포그래피, 그리드 시스템, z-index 등 ...
-<br>
-<br>
-
-  ## Mixin 
-![mixin](https://user-images.githubusercontent.com/84368302/143585860-874bd564-e9f2-44f3-aa00-0352fe91f986.png)
-- @mixin을 사용하면 그룹단위의 스타일을 변수처럼 적용할 수 있습니다. 즉 여러개의 스타일을 설정해두었다가 한번에 적용하는 것이 가능합니다. 
-- @mixin으로 선언된 스타일을 사용하고자 할때는 @include로 사용합니다. 
-<br>
-<br>
-
- ## 모듈 
-![모듈](https://user-images.githubusercontent.com/84368302/143585878-be3115a6-b72f-4a04-856a-dbc35d265cb6.PNG)
-- UI 구성요소중 반복적으로 사용하게되는 구성요소(버튼, 아바타 등...)을 미리 모듈화 한다.
-<br>
-<br>
-<br>
-<br>
-
-# 🔨 3. SCSS : Layout & Components 단위 구현
-![완성](https://user-images.githubusercontent.com/84368302/143585897-ca960649-a7f1-4999-82a5-d36ccd103506.PNG)
-- 미리 리팩토링한 변수, Mixin, 모듈을 활용해 Layout, Components 단위의 UI 구현을 한다. 
-
-
-<br>
+프런트엔드를 구성하는 가장 기초적인 assets 단위부터 SCSS를 통해 상태관리하는 방법 과 SCSS의 문법 등을 배울수 있다.
 <br>
 <br>
 <br>
 
 
+## 🔨기술스택 : HTML, SCSS, JavaScript
 
 
+| Skill | Info       | ✔   |
+| ------ | --------------- | --------------- | 
+| HTML    | Semantic 한 내일의집 UI Mark up | ✔   |
+|         | Login 상태 / 비회원 상태 Mark up | ✔   |
+| SCSS     | constants / mixins / modules 선언| ✔   |
+|          | layout / components 단위 UI 구축 | ✔   |
+| JavaScript | Tiny slider.js 를 활용한 carousel 구현 | ✔ |
+
+구현 과정 : (https://seaplus.tistory.com/59)
+
+<br>
+<br>
+<br>
+
+# ✅ UI Mark up
+<br>
+
+## 유저 인터렉션 UI
+|         | .is-active | .is-open   |
+| ------ | -----------| ------------ | 
+| GNB    | ✔ |      |
+| LNB    | ✔ |      |
+| Star-rating | ✔ |      |
+| Select-Group|  ✔ |      |
+
+<br>
+<br>
+<br>
+
+## 경우의수 에 따른 UI
+|         | 회원/비회원 | 반응형   | 그외 조건들   |
+| ------ | -----------| ------------ | ------------ | 
+| GNB    | ✔ |      |   |
+| .Sidebar-user    | ✔ |      |   |
+| .sidebar-user-menu   | ✔ |      |   |
+| .sear-modal    | ✔ |      |   |
+| .product-info-price |  |   ✔    |  |
+| .user-gallery-carousel |  |   ✔    |  |
+| .review-item |  |       |  ✔ |
+| .order-CTA |  |       |  ✔ |
+| .inquiry-item |  |       |  ✔ |
+
+
+<br>
+<br>
+<br>
 
 ## 🔧 1. GNB
 
