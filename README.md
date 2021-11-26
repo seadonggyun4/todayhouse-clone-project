@@ -42,7 +42,8 @@
 <br>
 
   ## Mixin 
-![mixin](https://user-images.githubusercontent.com/84368302/143585860-874bd564-e9f2-44f3-aa00-0352fe91f986.png)
+![mixin](https://user-images.githubusercontent.com/84368302/143587095-d351d3d3-c13e-40d2-9f8a-98da82f5be01.png)
+
 - @mixin을 사용하면 그룹단위의 스타일을 변수처럼 적용할 수 있습니다. 즉 여러개의 스타일을 설정해두었다가 한번에 적용하는 것이 가능합니다. 
 - @mixin으로 선언된 스타일을 사용하고자 할때는 @include로 사용합니다. 
 <br>
