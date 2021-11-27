@@ -26,7 +26,10 @@
 |          | layout / components 단위 UI 구축 | ✔   |
 | JavaScript | Tiny slider.js 를 활용한 carousel 구현 | ✔ |
 
-구현 과정 : (https://seaplus.tistory.com/59)
+<br>
+<br>
+
+### <strong>🌱 구현 과정 : (https://seaplus.tistory.com/59) </strong>
 
 <br>
 <br>
