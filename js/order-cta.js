@@ -58,12 +58,17 @@ function toggleOrderCtaBookark(){
     count += 1
   }
 
-  //toLocaleString() 은 숫자 타입에 , 를 자동으로 붙히는 메서드 이다.
+  //toLocaleString() 은 숫자 타입에 , 를 자동으로 붙히고 문자열로 변환한다.
   countSpan.innerHTML = count.toLocaleString()
+
+  //setAttribute()는 HTML 속성을 제어하는 매서드 이다.
+  //setAttribute(제어하고싶은 속성, 넣을 문장)
+  countSpan.setAttribute('aria-label',`북마크 ${countSpan.innerHTML} 회`)
 
 
   // 조건문보다 먼저 존재하면 is-active가 있다는 상태로 시작되어 꼬이게 된다.
   this.classList.toggle('is-active')  
+
 }
 
 orderCtaBookmarkButton.addEventListener('click',toggleOrderCtaBookark)
