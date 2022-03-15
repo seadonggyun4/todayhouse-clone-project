@@ -2,9 +2,22 @@ const gnbSearch = document.querySelector('.gnb-search')
 const gnbSearchInput = gnbSearch.querySelector('input')
 const gnbSearchHistory = gnbSearch.querySelector('.search-history')
 
+const gnbSearchHistoryList = gnbSearchHistory.querySelector('ol')
+
+
+const deleteAllButton = gnbSearchHistory.querySelector('.search-history-header button')
+
+
 
 // [ ==================== openGnbSearchHistory ==================== ]
 function openGnbSearchHistory(){
+  //gnbSearchHistoryList의 자식요소들의 길이가 0 일때(요소가 없을때)
+  if(gnbSearchHistoryList.children.length === 0){
+    //closeGnbSearchHistory 종료
+    return
+  }
+
+
   //gnbSearchHistory에 is-active 클래스 생성
   gnbSearchHistory.classList.add('is-active')
   //gnbSearchHistory에 is-active 클래스 있을시에
@@ -29,9 +42,16 @@ function closeGnbSearchHistory(e){
 
 }
 
-
-
 //gnbSearchInput focus시 openGnbSearchHistory이벤트 실행
 gnbSearchInput.addEventListener('focus', openGnbSearchHistory)
 
 
+// [ ==================== deleteAllSearchHistories ==================== ]
+function deleteAllSearchHistoryItems(){
+  // gnbSearchHistoryList 초기화
+  gnbSearchHistoryList.innerHTML = ''
+  //gnbSearchHistory의 is-active 클래스 제거
+  gnbSearchHistory.classList.remove('is-active')
+}
+
+deleteAllButton.addEventListener('click', deleteAllSearchHistoryItems)
