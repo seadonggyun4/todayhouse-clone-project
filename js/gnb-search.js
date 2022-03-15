@@ -19,7 +19,7 @@ function openGnbSearchHistory(){
 function closeGnbSearchHistory(e){
   console.log('closeGnbSearchHistory')
 
-  // 만약 gnbSearchInput이 아닌 요소에서 이벤트 발생시
+  // 만약 gnbSearch가 아닌 요소에서 이벤트 발생시
   if(!gnbSearch.contains(e.target)){
     //gnbSearchHistory의 is-active 클래스 제거
     gnbSearchHistory.classList.remove('is-active')
