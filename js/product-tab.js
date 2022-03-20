@@ -23,7 +23,6 @@ function toggleActiveTab(){
 function scrollToTabpanel(){
   const tabPanelId = this.parentNode.getAttribute('aria-labelledby')
   const tabPanel = document.querySelector(`#${tabPanelId}`) //id선택자
-  console.log(tabPanel)
 
   //삼항연산자로 조건을 건다
   const scrollAmount = tabPanel.getBoundingClientRect().top - (window.innerWidth >= 768 ?  TOP_HEADER_DESKTOP : TOP_HEADER_MOBILE)
@@ -83,8 +82,46 @@ function detectTabPanelPosition(){
   })  
 }
 
+// [  updateActiveTabOnScroll() => 유저 스크롤 값에 따라 tabpanel active]
+function updateActiveTabOnScroll(){
+  // 스크롤 위치에 따라서 activeTab업데이트
+  // 1. 현재 유저의 스크롤값 -> window.scrollY
+  // 2. 각 tabPanel y축 위치 -> productTabPanelPositionMap의 position값
+
+
+  const scrolledAmmount = window.scrollY + (window.innerWidth >= 768 ?  TOP_HEADER_DESKTOP + 80 : TOP_HEADER_MOBILE + 8)
+
+  let newActiveTab
+
+  if(scrolledAmmount >= productTabPanelPositionMap['product-recommendation']){
+    newActiveTab = productTabButtonList[4] // 추천 버튼
+  } else if(scrolledAmmount >= productTabPanelPositionMap['product-shipment']){
+    newActiveTab = productTabButtonList[3] // 배송/환불 버튼
+  } else if(scrolledAmmount >= productTabPanelPositionMap['product-inquiry']){
+    newActiveTab = productTabButtonList[2] // 문의 버튼
+  } else if(scrolledAmmount >= productTabPanelPositionMap['product-review']){
+    newActiveTab = productTabButtonList[1] // 리뷰 버튼
+  } else {
+    newActiveTab = productTabButtonList[0] // 상품정보 버튼
+  } 
+  
+  if(newActiveTab){
+    newActiveTab = newActiveTab.parentNode
+
+    if(newActiveTab !== currentActiveTab){
+      newActiveTab.classList.add('is-active')
+      currentActiveTab.classList.remove('is-active')
+      currentActiveTab = newActiveTab
+    }
+  }
+}
+
+
 //웹 컨텐츠가 로드 될시 detectTabPanelPosition 함수 실행 
 window.addEventListener('load', detectTabPanelPosition)
 
 //웹 viewpot 의 사이즈가 resize detectTabPanelPosition 함수 실행 
 window.addEventListener('resize', detectTabPanelPosition)
+
+//웹 scroll이벤트 발생시 updateActiveTabOnScroll 함수 실행 
+window.addEventListener('scroll', updateActiveTabOnScroll)
