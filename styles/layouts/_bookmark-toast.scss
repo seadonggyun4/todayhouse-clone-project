@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .bookmark-toast{
   $close-button-size:36px;
  
@@ -62,7 +64,7 @@
     }
 
     .close-button{
-      left: (56px - $close-button-size) / 2;
+      left: math.div(56px - $close-button-size, 2);
       font-size: 24px;
 
       &:hover{
