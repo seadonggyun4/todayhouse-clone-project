@@ -15,7 +15,7 @@
 <br>
 
 
-## 🔨기술스택 : HTML, SCSS, JavaScript
+## 🔨기술스택 : React, SCSS, JavaScript
 
 
 | Skill | Info       | ✔   |
