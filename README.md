@@ -5,11 +5,11 @@
 <br>
 
 # ✅ 내일의 집이란?
-  자취생 들의 필수어플 "오늘의 집" 의 상품판매 페이지의 UI 를 SCSS 를 활용해
+  자취생 들의 필수어플 "오늘의 집" 의 상품판매 페이지의 UI 를 React & SCSS 를 활용해
 
 크게는Layout 단위부터 componet 단위까지 자세하게 분석한뒤 똑같이 만들어 볼수 있다.
 <br>
-프런트엔드를 구성하는 가장 기초적인 assets 단위부터 SCSS를 통해 상태관리하는 방법 과 SCSS의 문법 등을 배울수 있다.
+프런트엔드를 구성하는 가장 기초적인 assets 단위부터 SCSS를 통해 관리하는 방법 과 React의 문법 등을 배울수 있다.
 <br>
 <br>
 <br>
@@ -20,8 +20,8 @@
 
 | Skill | Info       | ✔   |
 | ------ | --------------- | --------------- | 
-| HTML    | Semantic 한 내일의집 UI Mark up | ✔   |
-|         | Login 상태 / 비회원 상태 Mark up | ✔   |
+| HTML    | 웹 접근성 향상을 위한 aria-hidden, aria-label 속성 사용 | ✔   |
+| React    | component 단위의 UI 구성 | ✔   |
 | SCSS     | constants / mixins / modules 선언| ✔   |
 |          | layout / components 단위 UI 구축 | ✔   |
 | JavaScript | Tiny slider.js 를 활용한 carousel 구현 | ✔ |
