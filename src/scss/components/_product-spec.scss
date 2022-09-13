@@ -1,0 +1,62 @@
+.product-spec {
+  position: relative;
+  height: 470px;
+  padding-top: 20px;
+  overflow: hidden;
+
+  &.is-open {
+    height: auto;
+
+    .button-wrapper {
+      display: none;
+    }
+  }
+
+  .button-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    // 밑의 이미지를 감추기 위함
+    padding-bottom: 20px;
+    background-color: $white;
+
+    //그라데이션 효과
+    &::before {
+      // absolute로 만들어 인식하지 못하게 하기 위함 ->겹칠수 있게 된다.
+      position: absolute;
+      // 버튼길이 + 패딩길이
+      bottom: 55px + 20px;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 64px;
+      background-image: linear-gradient(to top, $white 0%, transparent 100%);
+      content: '';
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .product-table {
+    margin-top: 20px;
+  }
+
+  figure {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  @include responsive(T) {
+    padding-top: 0;
+    
+    .product-table {
+      margin-top: 40px;
+    }
+  }
+}

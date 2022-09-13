@@ -1,0 +1,60 @@
+.order-form-modal{
+    z-index: $order-form-modal-level;
+    position: fixed;
+    display: none;
+    bottom: 0;
+    left: 0;
+    padding-top: 16px;
+    max-height: 70vh;
+    width: 100%;
+    background-color: $white;
+    border-top-left-radius: 12px ;
+    border-top-right-radius: 12px ;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    
+
+    &.is-open{
+        display: block;
+        animation-name: modal-fade-in;
+        animation-duration: 300ms;
+    }
+
+    .order-inputs{
+        margin-bottom: 9px;
+    }
+
+    .order-checkouts{
+        margin-bottom: 16px;
+    }
+
+    .order-summary{
+        // position 이 fixed로 되어있는 button-group에 가리기 때문
+        margin-bottom: 48px + (4px * 2) + 16px; 
+    }
+
+    .button-group{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        padding: 4px;
+        width: 100%;
+        background-color: $white;
+    }
+
+
+    @include responsive(T){
+        padding-top: 32px;
+    }
+    
+
+    @keyframes modal-fade-in{
+        0%{
+            transform: translate3d(0, 100%, 0);
+        }
+
+        100%{
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}

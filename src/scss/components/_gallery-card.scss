@@ -1,0 +1,79 @@
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+
+  &-image {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+
+    img {
+      @include pos-center;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-detail {
+    @include flexbox(start);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    padding: 0 16px;
+    background-color: rgba($black, 0.4);
+
+    .username,
+    .order {
+      @include text-style(16, $white);
+    }
+
+    .avatar-32,
+    .order {
+      // 주문번호, 유저 아바타는 절대로 크기가 줄어들어서는 안되는 요소이다!!
+      flex-shrink: 0;
+    }
+
+    .avatar-32 {
+      margin-right: 8px;
+
+      &:active{
+        opacity: 0.4;
+      }
+    }
+
+    .username {
+      @include truncate;
+      // flex-grow는 flexbox 속성 내부의 요소가 얼마만큼의 공간을 차지할지 정하게 하는 명령어 이다.
+      // 유저 이름 같은 요소는 상황에 따라 가변적이기 때문에 이요소의 크기를 늘림으로서 ".gallery-card-detail"의 모양을 정렬할 수 있다.
+      flex-grow: 1;
+      padding-right: 8px;
+      font-weight: 700;
+
+      &:active{
+        color:$blue;
+      }
+    }
+  }
+
+  @include responsive(T){
+    &-detail{
+      .avatar-32{
+        &:hover{
+          opacity: 0.4;
+        }
+      }
+
+      .username{
+        &:hover{
+          color: $blue;
+        }
+      }
+    }
+  }
+}

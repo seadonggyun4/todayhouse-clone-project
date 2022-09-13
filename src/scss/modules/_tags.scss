@@ -1,0 +1,31 @@
+//[tag 모듈]
+
+//공통 스타일 선언
+//% 플레이스홀더 : mixin과 비슷하지만 인자를 받을수 없고 공통적으로 사용하는 범위가 한정되어있을때사용
+//사용할때 @extend 를 통해 사용해야 한다.
+%tag-base {
+  @include inline-flexbox;
+  @include text-style(12);
+  height: 20px;
+  padding: 0 6px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.tag-red {
+  @extend %tag-base;
+  color: $white;
+  background-color: $red;
+}
+
+.tag-green {
+  @extend %tag-base;
+  color: $white;
+  background-color: $green;
+}
+
+.tag-gray {
+  @extend %tag-base;
+  color: $secondary;
+  background-color: $border;
+}
